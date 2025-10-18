@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404: NOT_FOUND</title>
+  <style>
+    body {
+      background-color: #000; /* black background */
+      color: #fff; /* white text */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .box {
+      border: 1px solid #1e90ff; /* blue border */
+      padding: 30px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.05);
+      text-align: left;
+      width: 400px;
+      box-shadow: 0 0 20px rgba(30, 144, 255, 0.4);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    h1 {
+      color: #1e90ff;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    code {
+      background-color: rgba(30, 144, 255, 0.2);
+      padding: 3px 6px;
+      border-radius: 4px;
+      color: #1e90ff;
+      font-family: Consolas, monospace;
+    }
+
+    .footer {
+      border-top: 1px solid #1e90ff;
+      padding-top: 10px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Glow animation */
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #1e90ff; }
+      50% { text-shadow: 0 0 20px #1e90ff; }
+      100% { text-shadow: 0 0 5px #1e90ff; }
+    }
+
+    h1, code {
+      animation: glow 2s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <p>Visit: <code style="cursor: pointer;"><a style="text-decoration: none;" href="https://vortex7.vercel.app">https://vortex7.vercel.app</a></code></p>
+
+    <h1>404: NOT_FOUND</h1>
+    <p>Code: <code>DEPLOYMENT_NOT_FOUND</code></p>
+    <p>ID: <code id="deployId"></code></p>
+    <p>Visit: <code style="cursor: pointer;"><a style="text-decoration: none;" href="https://vortex7.vercel.app">https://vortex7.vercel.app</a></code></p>
+
+    <div class="footer">
+      <p>This deployment cannot be found. <br>
+      For more information and troubleshooting, see our <a href="#">documentation</a>.</p>
+    <p>Visit: <code style="cursor: pointer;"><a style="text-decoration: none;" href="https://vortex7.vercel.app">https://vortex7.vercel.app</a></code></p>
+
+    </div>
+  </div>
+
+  <script>
+    // Generate a random mock deployment ID
+    function randomID() {
+      const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+      let id = "cpt1::";
+      for (let i = 0; i < 30; i++) {
+        id += chars[Math.floor(Math.random() * chars.length)];
+      }
+      return id;
+    }
+
+    document.getElementById("deployId").innerText = randomID();
+
+    // Small floating animation trigger
+    setInterval(() => {
+      document.body.style.backgroundColor = 
+        document.body.style.backgroundColor === "black" ? "#01030a" : "black";
+    }, 2000);
+  </script>
+</body>
+</html>
